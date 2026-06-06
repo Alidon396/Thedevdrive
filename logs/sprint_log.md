@@ -16,6 +16,7 @@
 - ✅ Dashboard built
 - ✅ Connected Supabase credentials
 - ✅ Connected Firecrawl credentials
+- ✅ Connected GitHub repository & pushed initial workspace
 - ✅ Scraped 6 leads in Lahore, Karachi, and Islamabad
 - ⏳ Awaiting other API credentials (Vercel) for full deployment automation
 

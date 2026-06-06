@@ -1,0 +1,56 @@
+{
+  "sprint": {
+    "name": "TheDevDrive 10-Day Sprint",
+    "start_date": "2026-06-06",
+    "end_date": "2026-06-16",
+    "target_revenue_usd": 1000,
+    "currency": "USD"
+  },
+  "queue": [
+    {
+      "id": "t1",
+      "type": "marketer",
+      "description": "Scrape and score leads in Lahore, Karachi, and Islamabad",
+      "status": "done",
+      "priority": "high",
+      "payload": {
+        "leads_found": 6,
+        "high_priority": 4
+      }
+    },
+    {
+      "id": "t2",
+      "type": "builder",
+      "description": "Build high-converting responsive landing page demo for M Ashraf Mutton Shop & Restaurant (Lahore)",
+      "status": "active",
+      "priority": "high",
+      "payload": {
+        "lead_id": "3a4b9c1d-8f2c-4993-85b4-d558d7463f21",
+        "niche": "Restaurant",
+        "output_path": "demos/m-ashraf-mutton"
+      }
+    },
+    {
+      "id": "t3",
+      "type": "builder",
+      "description": "Build modern fitness/gym landing page demo for MFIT Gym (Karachi)",
+      "status": "pending",
+      "priority": "medium",
+      "payload": {
+        "lead_id": "c71d2b8b-e6a2-4a7b-99d8-bf5b3671239c",
+        "niche": "Gym / Fitness"
+      }
+    },
+    {
+      "id": "t4",
+      "type": "builder",
+      "description": "Build premium dental clinic booking landing page demo for OraDent Dental Clinic (Islamabad)",
+      "status": "pending",
+      "priority": "medium",
+      "payload": {
+        "lead_id": "5f64b1d6-d07f-4318-ae72-c28f3efbc5e6",
+        "niche": "Dentist / Clinic"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "agency": {
+    "name": "TheDevDrive",
+    "tagline": "Premium Digital Solutions, Delivered Fast",
+    "language": "en",
+    "timezone": "Asia/Karachi"
+  },
+  "sprint": {
+    "start_date": "2026-06-06",
+    "end_date": "2026-06-16",
+    "target_revenue_usd": 1000,
+    "days_total": 10,
+    "current_day": 1
+  },
+  "apis": {
+    "github": { "status": "connected", "repo_url": "https://github.com/Alidon396/Thedevdrive.git" },
+    "supabase": { "status": "connected", "url": "https://qvmjeknxwgtzgniquavx.supabase.co", "anon_key": "sb_publishable_ubyOffoegKXpqesSnDWciw_rntLwgBX" },
+    "openrouter": { "status": "pending", "api_key": null },
+    "firecrawl": { "status": "connected", "api_key": "fc-63e5c7c12fad4c8fbb4e70969ede2010" },
+    "vercel": { "status": "pending", "token": null }
+  },
+  "stack": {
+    "frontend": "React + Tailwind CSS",
+    "backend": "Supabase",
+    "hosting": "Vercel",
+    "scraping": "Firecrawl / Jina"
+  },
+  "pricing": {
+    "landing_page": { "min": 100, "max": 200 },
+    "business_website_3_5_pages": { "min": 250, "max": 500 },
+    "ecommerce_basic": { "min": 400, "max": 800 },
+    "redesign_modernize": { "min": 150, "max": 350 }
+  }
+}

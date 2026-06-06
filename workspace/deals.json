@@ -1,0 +1,23 @@
+{
+  "deals": [],
+  "summary": {
+    "total_revenue": 0,
+    "total_deals_won": 0,
+    "total_deals_lost": 0,
+    "pipeline_value": 0,
+    "target": 1000
+  },
+  "schema": {
+    "id": "string (uuid)",
+    "lead_id": "string (ref to leads.json)",
+    "service": "landing_page | business_website | ecommerce | redesign | custom",
+    "price_usd": "number",
+    "status": "proposal | negotiating | accepted | in_progress | delivered | paid | cancelled",
+    "payment_method": "string",
+    "created_at": "ISO datetime",
+    "delivered_at": "ISO datetime | null",
+    "paid_at": "ISO datetime | null",
+    "live_url": "string | null",
+    "notes": "string"
+  }
+}

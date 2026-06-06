@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M Ashraf Mutton Shop & Restaurant — Legacy of Taste in Gulberg, Lahore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #09090b;
+            --bg-card: #121217;
+            --accent: #d97706; /* Golden Amber */
+            --accent-hover: #b45309;
+            --accent-glow: rgba(217, 119, 6, 0.15);
+            --text-light: #fef3c7; /* Warm cream */
+            --text-gray: #a1a1aa;
+            --text-muted: #71717a;
+            --border: rgba(217, 119, 6, 0.1);
+            --radius: 20px;
+            --radius-sm: 12px;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(9, 9, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 10px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 20px 80px 20px;
+            background: linear-gradient(to right, rgba(9, 9, 11, 0.95) 40%, rgba(9, 9, 11, 0.4)), url('mutton_karahi.png');
+            background-size: cover;
+            background-position: center right;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            margin-left: calc((100vw - 1200px) / 2);
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 1240px) {
+            .hero-content { margin-left: 20px; }
+        }
+
+        .badge {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--accent), #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 16px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 32px var(--accent-glow);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 24px;
+            color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background: rgba(18, 18, 23, 0.5);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 100px 20px;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .menu-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed rgba(217, 119, 6, 0.15);
+        }
+
+        .menu-item-img {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-sm);
+            background: #24242e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .menu-item-info {
+            flex: 1;
+        }
+
+        .menu-item-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .menu-item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .menu-item-price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .menu-item-desc {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Reservation Section */
+        .booking {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .booking-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+        }
+
+        .booking-info {
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(217,119,6,0.05), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .booking-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .booking-info p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-glow);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .booking-form {
+            padding: 60px;
+            border-left: 1px solid var(--border);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select, textarea {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            color: white;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        /* Footer */
+        footer {
+            background: #050508;
+            border-top: 1px solid var(--border);
+            padding: 60px 20px 30px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-logo span { color: var(--accent); }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            padding-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 48px; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .booking-card { grid-template-columns: 1fr; }
+            .booking-form { border-left: none; border-top: 1px solid var(--border); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero {
+                background: linear-gradient(to bottom, rgba(9,9,11,0.95), rgba(9,9,11,0.85)), url('mutton_karahi.png');
+                background-position: center;
+            }
+            .hero-title { font-size: 40px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .booking-info, .booking-form { padding: 40px 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">M. ASHRAF <span>MUTTON</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">The Legacy</a></li>
+                <li><a href="#menu">Our Menu</a></li>
+                <li><a href="#booking">Book Table</a></li>
+            </ul>
+            <a href="#booking" class="btn">Order Now</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">🔥 Gulberg, Lahore's Finest</span>
+            <h1 class="hero-title">Legacy of Authentic <span>Mutton Karahi</span></h1>
+            <p class="hero-desc">For generations, M. Ashraf has served the gold standard of clay pot mutton, charcoal BBQ, and traditional desi ghee recipes to food lovers across Lahore.</p>
+            <div class="hero-ctas">
+                <a href="#booking" class="btn">Reserve a Table</a>
+                <a href="#menu" class="btn btn-outline">Explore Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="about">
+        <div class="section-header">
+            <h2>Why Connoisseurs Choose Us</h2>
+            <p>Every dish is prepared using time-honored recipes, premium fresh mutton, and authentic local spices.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🥩</div>
+                <h3>100% Fresh Meat</h3>
+                <p>Never frozen. We source only the finest quality grass-fed mutton daily for maximum tenderness and flavor.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍯</div>
+                <h3>Pure Desi Ghee</h3>
+                <p>Cooked in premium organic desi ghee and cold-pressed mustard oil using traditional slow-cooking methods.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Clay Pot Magic</h3>
+                <p>Slowly simmered in authentic clay handis over high-heat coals to seal in natural juices and rich spices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu-section" id="menu">
+        <div class="menu-container">
+            <div class="section-header">
+                <h2>Signature Masterpieces</h2>
+                <p>Handcrafted traditional meals cooked to perfection by our expert Ustaad chefs.</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">🍲</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <span class="menu-item-name">Special Mutton Karahi</span>
+                            <span class="menu-item-price">PKR 2,400</span>
+                        </div>
+                        <p class="menu-item-desc">Juicy mutton cooked with fresh tomatoes, green chilies, ginger, and aromatic ground spices in a traditional black karahi. (Half KG)</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">🍯</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <span class="menu-item-name">Desi Ghee Mutton Handi</span>
+                            <span class="menu-item-price">PKR 2,800</span>
+                        </div>
+                        <p class="menu-item-desc">Slow-cooked boneless mutton cubes in a rich, creamy tomato gravy laced with pure organic desi ghee. (Half KG)</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">🍢</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <span class="menu-item-name">Mutton Seekh Kabab</span>
+                            <span class="menu-item-price">PKR 1,200</span>
+                        </div>
+                        <p class="menu-item-desc">Minced mutton marinated in herbs and fresh spices, grilled to perfection over live charcoal skewers. (4 Pcs)</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">🍚</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <span class="menu-item-name">Special Mutton Pulao</span>
+                            <span class="menu-item-price">PKR 1,600</span>
+                        </div>
+                        <p class="menu-item-desc">Aromatic long-grain basmati rice cooked in rich mutton bone broth, loaded with tender mutton chunks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Booking Enquiry -->
+    <section class="booking" id="booking">
+        <div class="booking-card">
+            <div class="booking-info">
+                <h3>Reserve Your Dining Experience</h3>
+                <p>Avoid the wait. Book your table or place a pre-order now to ensure your meat is cooked fresh exactly when you arrive.</p>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <label>Call for booking</label>
+                        <p style="font-weight: 600; color: white;">+92 321 4455667</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <label>Location</label>
+                        <p style="font-weight: 600; color: white;">Main Boulevard, Gulberg III, Lahore</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-form">
+                <form id="reservationForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Ahmad Khan" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" placeholder="0300 1234567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Guests</label>
+                            <select id="guests">
+                                <option value="2">2 Persons</option>
+                                <option value="4">4 Persons</option>
+                                <option value="6">6+ Persons</option>
+                                <option value="10">Family Hall (10+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date & Time</label>
+                            <input type="datetime-local" id="date" required>
+                        </div>
+                        <div class="form-group full">
+                            <label for="specialRequest">Special Requests / Pre-Orders</label>
+                            <textarea id="specialRequest" rows="3" placeholder="e.g. Please pre-cook 1 KG Mutton Karahi ready by 8:30 PM..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; padding: 16px;">Request Booking Reservation</button>
+                </form>
+                <div id="successMessage" style="display: none; margin-top: 20px; color: var(--accent); font-weight: 600; text-align: center;">
+                    🎉 Request submitted! Our team will call you shortly to confirm your reservation.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" class="footer-logo">M. ASHRAF <span>MUTTON</span></a>
+        <ul class="footer-links">
+            <li><a href="#about">The Legacy</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#booking">Book Table</a></li>
+        </ul>
+        <p class="copyright">&copy; 2026 M. Ashraf Mutton Shop & Restaurant. Rebuilt by TheDevDrive.</p>
+    </footer>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Gather data
+            const data = {
+                name: document.getElementById('fullName').value,
+                phone: document.getElementById('phoneNumber').value,
+                guests: document.getElementById('guests').value,
+                dateTime: document.getElementById('date').value,
+                request: document.getElementById('specialRequest').value
+            };
+            
+            console.log('Reservation Data:', data);
+            
+            // Hide form, show success message
+            document.getElementById('reservationForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

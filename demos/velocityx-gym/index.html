@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="VelocityX Gym in Karachi. Modern fitness center with personal training, group classes, and state-of-the-art equipment. Transform your body today with our expert trainers.">
+    <meta name="keywords" content="Gym Karachi, Fitness center, Personal training, CrossFit classes">
+    <meta name="theme-color" content="#ff006e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>VelocityX Gym — Modern Fitness & Training in Karachi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0a0a0a;
+            --accent: #ff006e;
+            --accent-light: #ff3385;
+            --text-light: #ffffff;
+            --text-gray: #b0b0b0;
+            --bg-dark: #111111;
+            --border: rgba(255, 0, 110, 0.1);
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.98);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.85rem 2rem;
+            border: 2px solid var(--accent);
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 0, 110, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--accent);
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .program-card {
+            background: rgba(255, 0, 110, 0.05);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+        }
+
+        .program-card:hover {
+            border-color: var(--accent);
+            background: rgba(255, 0, 110, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(255, 0, 110, 0.2);
+        }
+
+        .program-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .program-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .feature p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .membership-section {
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(255, 0, 110, 0.05) 100%);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .membership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .membership-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+        }
+
+        .membership-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .membership-price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .membership-card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .membership-card ul {
+            list-style: none;
+            text-align: left;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .membership-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .membership-card li::before {
+            content: "✓ ";
+            color: var(--accent);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .signup-section {
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(255, 0, 110, 0.05) 100%);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .signup-section h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .signup-section p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 0, 110, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            border-radius: var(--radius);
+        }
+
+        .testimonial-text {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        footer {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">VelocityX</div>
+            <nav>
+                <a href="#programs">Programs</a>
+                <a href="#membership">Membership</a>
+                <a href="#signup">Join</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>UNLOCK YOUR POTENTIAL</h1>
+        <p>Modern Fitness Training & Community in Karachi</p>
+        <div class="cta-group">
+            <a href="#signup" class="btn">Start Free Trial</a>
+            <a href="#programs" class="btn btn-outline">View Programs</a>
+        </div>
+    </section>
+
+    <section id="programs" class="section">
+        <h2>OUR PROGRAMS</h2>
+        <div class="programs-grid">
+            <div class="program-card">
+                <h3>💪 Strength Training</h3>
+                <p>Build muscle and power with professionally designed strength programs. Our expert coaches guide every rep for maximum results.</p>
+            </div>
+            <div class="program-card">
+                <h3>🏃 Cardio & Conditioning</h3>
+                <p>High-intensity interval training and endurance workouts. Push your limits and transform your fitness level.</p>
+            </div>
+            <div class="program-card">
+                <h3>🧘 Flexibility & Core</h3>
+                <p>Yoga, Pilates, and core strengthening. Balance your training with flexibility work for optimal performance.</p>
+            </div>
+            <div class="program-card">
+                <h3>👥 Group Classes</h3>
+                <p>Zumba, spinning, HIIT, and CrossFit classes. Train with community energy and expert instruction.</p>
+            </div>
+            <div class="program-card">
+                <h3>🎯 Personal Training</h3>
+                <p>One-on-one sessions tailored to your goals. Our certified trainers create custom workout plans just for you.</p>
+            </div>
+            <div class="program-card">
+                <h3>📱 Online Coach App</h3>
+                <p>Access workout plans, form guides, and live coaching sessions from anywhere. Fitness on your schedule.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="section">
+        <h2>WORLD-CLASS FACILITIES</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🏋️</div>
+                <h3>Advanced Equipment</h3>
+                <p>Latest machines & free weights</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">❄️</div>
+                <h3>Climate Controlled</h3>
+                <p>Comfortable training environment</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚿</div>
+                <h3>Premium Showers</h3>
+                <p>Clean, modern facilities</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📺</div>
+                <h3>Entertainment</h3>
+                <p>Screens on every station</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Expert Trainers</h3>
+                <p>Certified professionals</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">☕</div>
+                <h3>Recovery Lounge</h3>
+                <p>Smoothie bar & relaxation area</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership" class="section">
+        <h2>FLEXIBLE MEMBERSHIP PLANS</h2>
+        <div class="membership-grid">
+            <div class="membership-card">
+                <h3>Basic</h3>
+                <div class="membership-price">PKR 2,999<span style="font-size: 0.6em; color: var(--text-gray);">/month</span></div>
+                <ul>
+                    <li>24/7 Gym Access</li>
+                    <li>All Equipment</li>
+                    <li>Member App</li>
+                    <li>Community Forum</li>
+                </ul>
+                <a href="#signup" class="btn" style="width: 100%;">Get Started</a>
+            </div>
+            <div class="membership-card" style="border: 2px solid var(--accent);">
+                <h3>Premium</h3>
+                <div class="membership-price">PKR 4,999<span style="font-size: 0.6em; color: var(--text-gray);">/month</span></div>
+                <ul>
+                    <li>24/7 Gym Access</li>
+                    <li>All Group Classes</li>
+                    <li>2 Personal Training Sessions</li>
+                    <li>Nutrition Consultation</li>
+                    <li>Member App</li>
+                </ul>
+                <a href="#signup" class="btn" style="width: 100%;">Most Popular</a>
+            </div>
+            <div class="membership-card">
+                <h3>Elite</h3>
+                <div class="membership-price">PKR 7,999<span style="font-size: 0.6em; color: var(--text-gray);">/month</span></div>
+                <ul>
+                    <li>Priority Access</li>
+                    <li>Unlimited Personal Training</li>
+                    <li>Nutrition & Meal Plans</li>
+                    <li>Guest Passes</li>
+                    <li>VIP Lounge Access</li>
+                </ul>
+                <a href="#signup" class="btn" style="width: 100%;">Get Elite</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <h2>MEMBER SUCCESS STORIES</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="testimonial-text">"VelocityX transformed my fitness journey. The trainers are incredible and the community is supportive!"</div>
+                <div class="testimonial-author">— Ali Khan, VelocityX Member</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Best gym in Karachi. Equipment is top-notch, staff is friendly, and the classes are amazing. Highly recommend!"</div>
+                <div class="testimonial-author">— Zara Malik, Fitness Enthusiast</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Finally found a gym with modern facilities and professional training. Can't imagine my workout routine anywhere else."</div>
+                <div class="testimonial-author">— Hassan Ahmed, Regular Member</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" class="section">
+        <div class="signup-section">
+            <h3>READY TO TRANSFORM?</h3>
+            <p>Join VelocityX today and start your fitness journey. First week is completely free!</p>
+            <a href="tel:+922111183569" class="btn">Call: +92 21 111 835 699</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>CONTACT & LOCATION</h2>
+        <div style="text-align: center; color: var(--text-gray);">
+            <p style="margin-bottom: 1rem;"><strong>Address:</strong> Karachi, Pakistan</p>
+            <p style="margin-bottom: 1rem;"><strong>Phone:</strong> +92 21 111 835 699</p>
+            <p style="margin-bottom: 2rem;"><strong>Email:</strong> support@velocityx.com</p>
+            <a href="tel:+922111183569" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#programs">Programs</a>
+                <a href="#membership">Membership</a>
+                <a href="#signup">Join</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2026 VelocityX Gym. Transform Your Potential.</p>
+        </div>
+    </footer>
+</body>
+</html>

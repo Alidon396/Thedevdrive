@@ -509,6 +509,109 @@
             .sprint-days .big { font-size: 32px; }
         }
 
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .demo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .demo-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(99,102,241,0.2);
+        }
+
+        .demo-card-header {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.1));
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .demo-card-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .demo-card-industry {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .demo-card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .demo-card-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+            flex: 1;
+        }
+
+        .demo-card-issue {
+            font-size: 12px;
+            background: rgba(239,68,68,0.1);
+            color: #ef4444;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 3px solid #ef4444;
+        }
+
+        .demo-card-link {
+            display: inline-block;
+            padding: 10px 16px;
+            background: rgba(99,102,241,0.15);
+            color: var(--accent);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .demo-card-score {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background: rgba(16,185,129,0.2);
+            border: 1px solid rgba(16,185,129,0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #10b981;
+        }
+
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg-primary); }
@@ -611,6 +714,14 @@
                 </div>
             </section>
 
+            <!-- Portfolio / Client Demos -->
+            <section style="margin-bottom: 28px;">
+                <h2 style="font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin-bottom: 16px;">🎨 Client Portfolio</h2>
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
             <!-- Two Column -->
             <section class="two-col">
                 <!-- Lead Funnel -->
@@ -644,6 +755,81 @@
     </div>
 
     <script>
+        // Portfolio data
+        const portfolioData = [
+            {
+                name: "M Ashraf Mutton Shop",
+                industry: "Restaurant / Food",
+                desc: "Popular local dining spot in Gulberg, Lahore with massive foot traffic but no website presence.",
+                issue: "No website • Loss of direct bookings",
+                score: 9,
+                link: "../demos/m-ashraf-mutton/index.html"
+            },
+            {
+                name: "OraDent Clinic",
+                industry: "Dental / Healthcare",
+                desc: "Premium dental clinic in F-8 Islamabad with slow website and no booking functionality.",
+                issue: "Slow site • No booking system • Placeholder text",
+                score: 8,
+                link: "../demos/oradent-clinic/index.html"
+            },
+            {
+                name: "MFIT Gym",
+                industry: "Fitness / Gym",
+                desc: "Local gym in Karachi with static website and poor mobile experience.",
+                issue: "Outdated design • No mobile optimization",
+                score: 8,
+                link: "../demos/mfit-gym/index.html"
+            },
+            {
+                name: "The Poet Restaurant",
+                industry: "Restaurant / Fine Dining",
+                desc: "Premium dining in Lake City, Lahore with slow loading and busy mobile layout.",
+                issue: "Slow loading • Non-responsive design",
+                score: 6,
+                link: "../demos/the-poet-restaurant/index.html"
+            },
+            {
+                name: "VelocityX Gym",
+                industry: "Fitness / Gym",
+                desc: "Modern gym in Karachi with broken links and missing online signup flow.",
+                issue: "Broken links • No signup form",
+                score: 7,
+                link: "../demos/velocityx-gym/index.html"
+            },
+            {
+                name: "Kensington Dental",
+                industry: "Dental / Healthcare",
+                desc: "Premium clinic in F-7 Islamabad with slow mobile performance and unclear doctor profiles.",
+                issue: "Slow mobile • Unclear navigation",
+                score: 7,
+                link: "../demos/kensington-dental/index.html"
+            }
+        ];
+
+        function renderPortfolio() {
+            const grid = document.getElementById('portfolioGrid');
+            if (!grid) return;
+            
+            let html = '';
+            portfolioData.forEach(client => {
+                html += `
+                    <a href="${client.link}" class="demo-card">
+                        <div class="demo-card-header">
+                            <div class="demo-card-title">${client.name}</div>
+                            <div class="demo-card-industry">${client.industry}</div>
+                            <div class="demo-card-score">${client.score}/10</div>
+                        </div>
+                        <div class="demo-card-body">
+                            <div class="demo-card-desc">${client.desc}</div>
+                            <div class="demo-card-issue">⚠️ ${client.issue}</div>
+                            <div class="demo-card-link">View Demo →</div>
+                        </div>
+                    </a>`;
+            });
+            grid.innerHTML = html;
+        }
+
         // Clock
         function updateClock() {
             const now = new Date();
@@ -786,6 +972,7 @@
         }
 
         // Initial load
+        renderPortfolio();
         loadData();
 
         // Auto-refresh every 10 seconds

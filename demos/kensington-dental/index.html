@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Kensington Dental Clinic in Islamabad. Premium dental services including implants, orthodontics, and cosmetic dentistry. Experienced dentists with modern technology. Schedule your consultation.">
+    <meta name="keywords" content="Dental clinic Islamabad, Dental implants, Cosmetic dentistry, Orthodontics">
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Kensington Dental Clinic — Premium Dental Care in Islamabad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #0f4c75;
+            --secondary: #3282b8;
+            --accent: #00d4ff;
+            --accent-light: #55e0ff;
+            --text-light: #ffffff;
+            --text-gray: #ccc;
+            --bg-dark: #0a1929;
+            --bg-card: #132f4c;
+            --border: rgba(0, 212, 255, 0.1);
+            --radius: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 25, 41, 0.98);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f4c75 0%, #1a2a3a 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.85rem 2rem;
+            border: 2px solid var(--accent);
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .doctor-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .doctor-card:hover {
+            border-color: var(--accent);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .doctor-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 3px solid var(--accent);
+        }
+
+        .doctor-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .doctor-card .specialty {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .doctor-card .bio {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .appointment-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .appointment-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .appointment-section p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            border-radius: var(--radius);
+        }
+
+        .testimonial-text {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .treatment-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .treatment-info h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .treatment-info ul {
+            list-style: none;
+            color: var(--text-gray);
+        }
+
+        .treatment-info li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .treatment-info li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        footer {
+            background: rgba(10, 25, 41, 0.5);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">🦷 KENSINGTON DENTAL</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#doctors">Our Doctors</a>
+                <a href="#appointment">Appointment</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Your Smile, Our Passion</h1>
+        <p>Premium Dental Care & Modern Cosmetic Solutions in F-7 Islamabad</p>
+        <div class="cta-group">
+            <a href="#appointment" class="btn">Book Appointment</a>
+            <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🦷 General Dentistry</h3>
+                <p>Comprehensive dental care including cleanings, fillings, and preventive treatments to maintain your healthy smile.</p>
+            </div>
+            <div class="service-card">
+                <h3>✨ Cosmetic Dentistry</h3>
+                <p>Transform your smile with teeth whitening, veneers, and smile design services tailored to your goals.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔬 Root Canal Treatment</h3>
+                <p>Advanced endodontic procedures to save your natural teeth with minimal discomfort and maximum precision.</p>
+            </div>
+            <div class="service-card">
+                <h3>😁 Orthodontics</h3>
+                <p>Braces and clear aligners for perfect teeth alignment. Modern techniques for optimal results.</p>
+            </div>
+            <div class="service-card">
+                <h3>🪥 Dental Implants</h3>
+                <p>Permanent tooth replacement solutions that look and feel natural. Restore your confidence and bite.</p>
+            </div>
+            <div class="service-card">
+                <h3>👶 Pediatric Dentistry</h3>
+                <p>Gentle, caring dental care for children. We make dental visits fun and support healthy oral development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctors" class="section">
+        <h2>Meet Our Expert Doctors</h2>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-avatar">Dr. A</div>
+                <h3>Dr. Ahmed Malik</h3>
+                <div class="specialty">BDS, MDS - General Dentistry</div>
+                <div class="bio">20+ years of experience in comprehensive dental care and patient satisfaction</div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">Dr. F</div>
+                <h3>Dr. Fatima Khan</h3>
+                <div class="specialty">BDS - Cosmetic & Orthodontics</div>
+                <div class="bio">Specialist in smile design and modern alignment techniques</div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">Dr. R</div>
+                <h3>Dr. Rizwan Ahmed</h3>
+                <div class="specialty">BDS, MSc - Implantology</div>
+                <div class="bio">Expert in dental implants and advanced surgical procedures</div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">Dr. S</div>
+                <h3>Dr. Sara Hussain</h3>
+                <div class="specialty">BDS - Pediatric Dentistry</div>
+                <div class="bio">Compassionate care specialist for children and anxious patients</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);">
+        <h2>Why Choose Kensington</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Expert Team</h3>
+                <p>Highly qualified, experienced professionals</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Modern Technology</h3>
+                <p>Latest digital imaging and dental equipment</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">😌</div>
+                <h3>Patient Comfort</h3>
+                <p>Relaxing environment with sedation options</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Affordable Plans</h3>
+                <p>Flexible payment options available</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⏱️</div>
+                <h3>Fast Service</h3>
+                <p>Efficient appointments, minimal wait time</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Personalized Care</h3>
+                <p>Treatment plans tailored to your needs</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="section">
+        <h2>Schedule Your Appointment</h2>
+        <div class="appointment-section">
+            <p>Book your consultation today. Our friendly team is ready to welcome you at our modern facility in F-7, Islamabad.</p>
+            <div class="features" style="margin-top: 2rem;">
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3>Online Booking</h3>
+                    <p>Schedule instantly, 24/7</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>Instant Confirmation</h3>
+                    <p>SMS & email reminders</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Minimal Wait</h3>
+                    <p>Respect your time</p>
+                </div>
+            </div>
+            <br>
+            <a href="tel:+92512824314" class="btn">Call: +92 51 2824314</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Treatment Packages</h2>
+        <div class="treatment-info">
+            <h3>Complete Smile Makeover Package</h3>
+            <ul>
+                <li>Comprehensive dental examination & digital imaging</li>
+                <li>Professional cleaning & whitening</li>
+                <li>Cosmetic treatments (veneers, bonding)</li>
+                <li>Treatment plan with flexible payment</li>
+            </ul>
+        </div>
+        <div class="treatment-info">
+            <h3>Family Dental Care Plan</h3>
+            <ul>
+                <li>Annual cleanings & preventive care</li>
+                <li>Pediatric dental services included</li>
+                <li>Emergency care priority</li>
+                <li>Special family discounts (up to 20%)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <h2>Patient Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="testimonial-text">"Excellent service! Dr. Ahmed is very professional and thorough. My teeth have never looked better. Highly recommended!"</div>
+                <div class="testimonial-author">— Amna Khan, Patient</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"The clinic is modern and clean. The staff is friendly and professional. Best dental experience in Islamabad!"</div>
+                <div class="testimonial-author">— Hassan Ali, Patient</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Dr. Fatima's cosmetic work is amazing. My smile confidence has completely changed. Thank you Kensington!"</div>
+                <div class="testimonial-author">— Zara Ahmed, Patient</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section" style="border-bottom: none;">
+        <h2>Contact & Visit Us</h2>
+        <div style="text-align: center; color: var(--text-gray);">
+            <p style="margin-bottom: 1rem;"><strong>Location:</strong> F-7, Islamabad, Pakistan</p>
+            <p style="margin-bottom: 1rem;"><strong>Phone:</strong> +92 51 2824314</p>
+            <p style="margin-bottom: 1rem;"><strong>Email:</strong> contact@kdicislamabad.com</p>
+            <p style="margin-bottom: 2rem;"><strong>Hours:</strong> Mon-Fri 9:00 AM - 8:00 PM | Sat 10:00 AM - 5:00 PM | Sun Closed</p>
+            <a href="#appointment" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#doctors">Doctors</a>
+                <a href="#appointment">Appointment</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2026 Kensington Dental Clinic. Your smile, our expertise.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2026-06-06T18:45:11.982247",
+    "business": "M Ashraf Mutton Shop",
+    "contact": "Ashraf",
+    "method": "phone",
+    "status": "queued",
+    "demo_url": "http://localhost:8000/demos/m-ashraf-mutton/index.html"
+  },
+  {
+    "timestamp": "2026-06-06T18:45:11.984188",
+    "business": "OraDent Dental Clinic",
+    "contact": "Dr. OraDent",
+    "method": "email",
+    "status": "queued",
+    "demo_url": "http://localhost:8000/demos/oradent-clinic/index.html"
+  },
+  {
+    "timestamp": "2026-06-06T18:45:11.996165",
+    "business": "MFIT Gym",
+    "contact": "Trainer Office",
+    "method": "email",
+    "status": "queued",
+    "demo_url": "http://localhost:8000/demos/mfit-gym/index.html"
+  },
+  {
+    "timestamp": "2026-06-06T18:45:12.011087",
+    "business": "VelocityX Gym",
+    "contact": "Front Desk",
+    "method": "email",
+    "status": "queued",
+    "demo_url": "http://localhost:8000/demos/velocityx-gym/index.html"
+  },
+  {
+    "timestamp": "2026-06-06T18:45:12.028839",
+    "business": "Kensington Dental Clinic",
+    "contact": "Clinic Coordinator",
+    "method": "email",
+    "status": "queued",
+    "demo_url": "http://localhost:8000/demos/kensington-dental/index.html"
+  },
+  {
+    "timestamp": "2026-06-06T18:45:12.041188",
+    "business": "The Poet Restaurant",
+    "contact": "Management",
+    "method": "email",
+    "status": "queued",
+    "demo_url": "http://localhost:8000/demos/the-poet-restaurant/index.html"
+  }
+]
